@@ -14,18 +14,13 @@
     width: inherit;
 }
 
-/* West Pane */
+/* Center Pane */
 #center-pane {
 	max-width: 250px;
 	max-height: 100px
 	display: inline-block;
 	float: left;
 	height: inherit;
-}
-
-#logo img{
-	max-width: 250px;
-	margin: 5px;
 }
 
 #menu {
@@ -51,19 +46,25 @@
 	width: inherit;
 }
 
-/* East Pane */
-#east-pane {
+/* North Pane */
+#north-pane {
 	display: inline-block;
 	float: left;
-	height: inherit;
-	width: 600px;
+	height: 100px;
+	width: 100%;
+}
+
+#logo img{
+	width: 200px;
+	/*margin: 5px;*/
+	float: left;
 }
 
 #header {
 	height: 100px;
 	background-color: #FF9933;
-	width: auto;
-	margin: 5px;
+	width: 400px;
+	float: left;
 }
 
 #content {
