@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jpSite.css">
+	</head>
+	<body ng-app="jpSite" id="body">
+
+    <div id="main">
+
+        <!-- West Pane -->
+		    <div id="west-pane">
+
+           <div id="menu">
+              <!-- Main Nav -->
+              <div id="nav">
+                  <ul class="nav-buttons">
+                    <li class="active"><a href="#/">Home</a></li>
+                    <li><a href="#/music">Music</a></li>
+                    <li><a href="#/blog">Blog</a></li>
+                    <li><a href="#/videos">Vidoes</a></li>
+                    <li><a href="#/contact">Contact</a></li>
+                  </ul>
+              </div>
+
+              <!-- Social/External Links -->
+              <div id="social">social</div>
+
+              <!-- Footer -->
+              <div id="footer">footer</div>
+            </div>
+        </div>
+
+        <!-- East Pane -->
+        <div id="east-pane">
+
+            <!-- West Pane -->
+            <div id="header">
+               <!-- Logo Img-->
+              <div id="logo">
+                <img src="img/twc_logo.gif"/>
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div id="content" ng-view></div>
+        </div>
+    </div>
+
+        <!-- Additional scripts -->
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+	</body>
+</html>

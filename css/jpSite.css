@@ -1,0 +1,72 @@
+#body {
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: auto;
+	height: 900px;
+}
+
+#main {
+	background-image: url("../img/JP_2.jpg");
+	background-size: 100%;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: inherit;
+}
+
+/* West Pane */
+#center-pane {
+	max-width: 250px;
+	max-height: 100px
+	display: inline-block;
+	float: left;
+	height: inherit;
+}
+
+#logo img{
+	max-width: 250px;
+	margin: 5px;
+}
+
+#menu {
+	width: inherit;
+	height: inherit;
+}
+
+#nav {
+	background-color: #666699;
+	height: 400px;
+	width: inherit;
+}
+
+#social {
+	background-color: #999966;
+	height: 50px;
+	width: inherit;
+}
+
+#footer {
+	background-color: #993333;
+	height: 50px;
+	width: inherit;
+}
+
+/* East Pane */
+#east-pane {
+	display: inline-block;
+	float: left;
+	height: inherit;
+	width: 600px;
+}
+
+#header {
+	height: 100px;
+	background-color: #FF9933;
+	width: auto;
+	margin: 5px;
+}
+
+#content {
+	width: auto;
+	height: 500px;
+}
