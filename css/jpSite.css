@@ -16,22 +16,21 @@
 
 /* Center Pane */
 #center-pane {
-	max-width: 250px;
-	max-height: 100px
-	display: inline-block;
-	float: left;
-	height: inherit;
+	width: 1000px;
+	max-height: 1000px;
+	display: inline;
+	height: 500px;
 }
 
 #menu {
-	width: inherit;
+	width: 200px;
 	height: inherit;
+	float: left;
 }
 
 #nav {
-	background-color: #666699;
 	height: 400px;
-	width: inherit;
+	width: 100%;
 }
 
 #social {
@@ -44,6 +43,12 @@
 	background-color: #993333;
 	height: 50px;
 	width: inherit;
+}
+
+#content {
+	width: auto;
+	height: 500px;
+	float: left;
 }
 
 /* North Pane */
@@ -65,9 +70,4 @@
 	background-color: #FF9933;
 	width: 400px;
 	float: left;
-}
-
-#content {
-	width: auto;
-	height: 500px;
 }

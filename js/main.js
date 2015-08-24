@@ -17,10 +17,12 @@ $routeProvider
 .when("/", {templateUrl: "html/home.html"})
 // Music
 .when("/music", {templateUrl: "html/music.html"})
-// Blog
-.when("/blog", {templateUrl: "html/blog.html"})
 // Videos
 .when("/videos", {templateUrl: "html/videos.html"})
+// Social
+.when("/social", {templateUrl: "html/social.html"})
+// Blog
+.when("/blog", {templateUrl: "html/blog.html"})
 // Contact
 .when("/contact", {templateUrl: "html/contact.html"})
 

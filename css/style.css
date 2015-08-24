@@ -16,14 +16,16 @@ body {
 	background-color: #ece8e5;
 }
 nav {
-	height: 40px;
+	height: 100%;
 	width: 100%;
 	background: #455868;
+	/*opacity: 0.5;*/
 	font-size: 11pt;
 	font-family: 'PT Sans', Arial, sans-serif;
 	font-weight: bold;
 	position: relative;
 	border-bottom: 2px solid #283744;
+	display: flex;
 }
 nav ul {
 	padding: 0;
@@ -38,7 +40,7 @@ nav li {
 nav a {
 	color: #fff;
 	display: inline-block;
-	width: 100px;
+	width: 200px;
 	text-align: center;
 	text-decoration: none;
 	line-height: 40px;
@@ -81,7 +83,7 @@ nav a#pull {
 	}
   	nav a {
 	  	text-align: left;
-	  	width: 100%;
+	  	width: 200px;
 	  	text-indent: 25px;
   	}
 }

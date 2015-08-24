@@ -4,6 +4,12 @@
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jpSite.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+   
+
 	</head>
 	<body ng-app="jpSite" id="body">
 
@@ -28,15 +34,18 @@
 
            <div id="menu">
               <!-- Main Nav -->
-              <div id="nav">
-                  <ul class="nav-buttons">
+              <nav id="nav" class="clearfix">
+                 
+                <ul class="clearfix">
                     <li class="active"><a href="#/">Home</a></li>
                     <li><a href="#/music">Music</a></li>
-                    <li><a href="#/blog">Blog</a></li>
                     <li><a href="#/videos">Vidoes</a></li>
+                    <li><a href="#/social">Social</a></li>
+                    <li><a href="#/blog">Blog</a></li>
                     <li><a href="#/contact">Contact</a></li>
-                  </ul>
-              </div>
+                </ul>
+                <a href="#" id="pull">Menu</a>
+              </nav>
 
               <!-- Social/External Links -->
               <div id="social">social</div>
@@ -53,5 +62,26 @@
 
         <!-- Additional scripts -->
         <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+         <script>
+    $(function() {
+      var pull    = $('#pull');
+        menu    = $('nav ul');
+        menuHeight  = menu.height();
+
+      $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+      });
+
+      $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+        });
+    });
+  </script>
 	</body>
 </html>
