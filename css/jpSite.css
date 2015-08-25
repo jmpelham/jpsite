@@ -29,12 +29,12 @@
 }
 
 #nav {
-	height: 400px;
+	height: 306px;
 	width: 100%;
 }
 
 #social {
-	background-color: #999966;
+	background: rgba(0, 0, 0, 0.6);
 	height: 50px;
 	width: inherit;
 }

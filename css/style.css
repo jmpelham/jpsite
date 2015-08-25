@@ -18,24 +18,24 @@ body {
 nav {
 	height: 100%;
 	width: 100%;
-	background: #455868;
-	/*opacity: 0.5;*/
+	background: rgba(0, 0, 0, 0.6);
 	font-size: 11pt;
 	font-family: 'PT Sans', Arial, sans-serif;
 	font-weight: bold;
 	position: relative;
-	border-bottom: 2px solid #283744;
+	border-top: 2px solid #ffffff;
 	display: flex;
 }
 nav ul {
 	padding: 0;
 	margin: 0 auto;
 	width: 600px;
-	height: 40px;
+	height: 50px;
 }
 nav li {
 	display: inline;
 	float: left;
+	border-bottom: #ffffff solid 1px;
 }
 nav a {
 	color: #fff;
@@ -43,7 +43,7 @@ nav a {
 	width: 200px;
 	text-align: center;
 	text-decoration: none;
-	line-height: 40px;
+	line-height: 50px;
 	text-shadow: 1px 1px 0px #283744;
 }
 nav li a {
