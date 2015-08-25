@@ -45,6 +45,7 @@ nav a {
 	text-decoration: none;
 	line-height: 50px;
 	text-shadow: 1px 1px 0px #283744;
+	color: #fff;
 }
 nav li a {
 	border-right: 1px solid #576979;

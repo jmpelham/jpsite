@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+    <meta description="jgotdreams.com | The Official Website For J. Pelham" charset="UTF-8">
+
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jpSite.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/ticker.css">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-   
-
 	</head>
 	<body ng-app="jpSite" id="body">
 
@@ -23,9 +24,22 @@
             </div>
               
             <!-- heaader -->
-            <div id="header">
-               
-            </div>
+            <!--<div id="header">-->
+              <div id="wrapper">
+                <div class="first">
+                  <dl id="ticker-1">
+                    <dt>News ticker</dt>
+                      <dd>A news ticker (sometimes referred to as a &quot;crawler&quot;) resides in the lower third of the television screen space on television news networks dedicated to presenting headlines or minor pieces of news.</dd>
+                
+                    <dt>Scoreboard style</dt>
+                      <dd>It may also refer to a long, thin scoreboard-style display seen around the front of some offices or public buildings.</dd>
+                
+                    <dt>WWW</dt>
+                      <dd>Since the growth in usage of the World Wide Web, news tickers have largely syndicated news posts from the websites of the broadcasting services which produce the broadcasts.</dd>
+                  </dl>
+                </div>
+              </div>
+            <!--</div>-->
 
         </div>
 
@@ -48,10 +62,18 @@
               </nav>
 
               <!-- Social/External Links -->
-              <div id="social">social</div>
+              <div id="social-icons">
+                <div class="icon"><a href="http://www.facebook.com/heartofawinner"><img src="img/facebook.png" alt="Facebook"></a></div>
+                <div class="icon"><a href="http://www.twitter.com/heartofawinner"><img src="img/twitter.png" alt="Twitter"></a></div>
+                <div class="icon"><a href="http://www.instagram.com/heartofawinner"><img src="img/instagram.png" alt="Instagram"></a></div>
+                <div class="icon"><a href="http://heartofawinner.bandcamp.com"><img src="img/bandcamp.png" alt="Bandcamp"></a></div>
+                <div class="icon"><a href="http://www.youtube.com/heartofawinner"><img src="img/youtube.png" alt="Youtube"></a></div>
+              </div>
 
               <!-- Footer -->
-              <div id="footer">footer</div>
+              <div id="footer">
+                <span>© The Winners Circle Media Group, LLC, 2015. All Rights Reserved</span>
+              </div>
             </div>
 
             <!-- Main Content -->
@@ -64,24 +86,8 @@
         <script type="text/javascript" src="js/angular-route.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-         <script>
-    $(function() {
-      var pull    = $('#pull');
-        menu    = $('nav ul');
-        menuHeight  = menu.height();
-
-      $(pull).on('click', function(e) {
-        e.preventDefault();
-        menu.slideToggle();
-      });
-
-      $(window).resize(function(){
-            var w = $(window).width();
-            if(w > 320 && menu.is(':hidden')) {
-              menu.removeAttr('style');
-            }
-        });
-    });
-  </script>
+        <script type="text/javascript" src="js/ticker.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+         
 	</body>
 </html>
