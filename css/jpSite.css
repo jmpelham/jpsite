@@ -5,31 +5,35 @@ html, body {
 #body {
 	display: block;
 	margin: auto;
-	text-align: center;
 	width: auto;
 	height: 900px;
-	overflow: hidden;
+	
 }
 
 #main {
 	background-image: url("../img/JP_2.jpg");
-	background-size: 100%;
-    background-repeat: no-repeat;
-    height: inherit;
-    width: inherit;
+
+	background-size: cover; 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /*z-index: -500;*/
+    left: 0px;
+    top: 0px;
+    background-position: top center;
 }
 
 /* Center Pane */
 #center-pane {
-	width: 1000px;
+	width: 100%;
 	max-height: 1000px;
-	display: inline;
+	display: inline-flex;
 	height: 500px;
 }
 
 #menu {
 	width: 200px;
-	height: inherit;
+	height: 100%;
 	float: left;
 }
 
@@ -71,9 +75,31 @@ html, body {
 }
 
 #content {
-	width: auto;
-	height: 500px;
+	width: 1000px;
+	height: auto;
 	float: left;
+	text-align: center;
+	margin: auto;
+	overflow: scroll;
+}
+
+#content H1 {
+	font-size: 30pt;
+	font-family: 'PT Sans', Arial, sans-serif;
+	color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	padding: 10px 0;
+	margin-left: 20px;
+
+}
+
+.post {
+	margin-left: 20px;
+	padding: 30px 0;
+	text-align: center;
+	background: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #fff;
 }
 
 /* North Pane */

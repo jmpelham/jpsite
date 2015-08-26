@@ -2,6 +2,7 @@
 	/*margin: -100px 0 0 0;*/
 	position: relative;
 	left: 0;
+	width: 100%;
 }
 #wrapper h3 {
 	font-size: 20px;
@@ -9,7 +10,7 @@
 }
  
 #wrapper > div {
-	background-color: #eee;
+	
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	width: 100%;
@@ -32,11 +33,14 @@
 	padding: 5px 10px;
 }
 #wrapper dt {
-	background-color: #f66;
+	font-size: 11pt;
+	font-family: 'PT Sans', Arial, sans-serif;
+	font-weight: bold;
+	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
 }
 #wrapper dd {
-	color: #333;
+	color: #fff;
 	margin-right: 50px;
 }
  

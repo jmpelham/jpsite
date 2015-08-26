@@ -18,18 +18,6 @@ $(function() {
 		scroll: _scroll
 	});
  
-	$('#ticker-2').carouFredSel({
-		width: 1000,
-		align: false,
-		circular: false,
-		items: {
-			width: 'variable',
-			height: 35,
-			visible: 2
-		},
-		scroll: _scroll
-	});
- 
 	//	set carousels to be 100% wide
 	$('.caroufredsel_wrapper').css('width', '100%');
  
