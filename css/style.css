@@ -23,7 +23,7 @@ nav {
 	font-family: 'PT Sans', Arial, sans-serif;
 	font-weight: bold;
 	position: relative;
-	border-top: 2px solid #ffffff;
+	border-top: 1px solid #ffffff;
 	display: flex;
 }
 nav ul {
@@ -47,7 +47,7 @@ nav a {
 	color: #fff;
 }
 nav li a {
-	border-right: 1px solid #576979;
+	/*border-right: 1px solid #576979;*/
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
