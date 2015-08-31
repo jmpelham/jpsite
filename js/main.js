@@ -5,12 +5,34 @@
 var app = angular.module('jpSite', ['ngRoute']);
 
 // Main Controller
-app.controller('MainCtrl', ['$route', '$routeParams', '$location',
-  function($route, $routeParams, $location) {
+app.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location',
+  function($scope, $route, $routeParams, $location) {
     this.$route = $route;
     this.$location = $location;
     this.$routeParams = $routeParams;
+
+    $scope.$on('$viewContentLoaded', function(event){
+		$scope.$broadcast('viewLoaded');
+	});
 }]);
+
+// View Controllers
+app.controller('musicPostCtrl', function ($scope, $sce, $http) {
+	$scope.posts = {};
+
+	$http.get('data/musicPosts.json').
+	    success(function(data, status, headers, config) {
+	      $scope.posts.musicPosts = data;
+	    }).
+	    error(function(data, status, headers, config) {
+	      alert("Error: Could not retrieve data.")
+	    });
+})
+.controller('socialCtrl', function ($scope) {
+	$scope.$on('viewLoaded', function(event){
+		new Juicer.Views.Feed({el: '.juicer-feed' }).render();
+	});
+});
 
 // Routing
 app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -32,22 +54,15 @@ $sceDelegateProvider.resourceUrlWhitelist(
 	[
      'self',
      '*://www.youtube.com/**',
-     '*://w.soundcloud.com/**'
+     '*://w.soundcloud.com/**',
+     '*.juicer.io/**'
+     /*,
+     '*.facebook.com/**',
+     '*scontent.cdninstagram.com/**'*/
 	]
 );
 
 }]);
 
-//Div Creation
-app.controller('musicPostCtrl', function ($scope, $sce, $http) {
-	$scope.posts = {};
 
-	$http.get('data/musicPosts.json').
-	    success(function(data, status, headers, config) {
-	      $scope.posts.musicPosts = data;
-	    }).
-	    error(function(data, status, headers, config) {
-	      alert("Error: Could not retrieve data.")
-	    });
-});
 
