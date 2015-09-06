@@ -37,8 +37,8 @@ app.controller('musicPostCtrl', function ($scope, $sce, $http) {
 // Routing
 app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 $routeProvider
-// Home
-.when("/", {templateUrl: "html/home.html"})
+// Home / News
+.when("/", {templateUrl: "html/news.html"})
 // Music
 .when("/music", {templateUrl: "html/music.html"})
 // Videos
@@ -47,6 +47,8 @@ $routeProvider
 .when("/social", {templateUrl: "html/social.html"})
 // Blog
 .when("/blog", {templateUrl: "html/blog.html"})
+//About
+.when("/about", {templateUrl: "html/about.html"})
 // Contact
 .when("/contact", {templateUrl: "html/contact.html"})
 

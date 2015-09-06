@@ -11,49 +11,49 @@ html, body {
 
 #main {
 	background-image: url("../img/JP_17.jpg");
-
 	background-size: cover; 
     height: 100%;
     width: 100%;
     position: fixed;
-    /*z-index: -500;*/
     left: 0px;
     top: 0px;
     background-position: top center;
+    display: inline-flex;
 }
 
-/* Center Pane */
-#center-pane {
+/* East Pane */
+#east-pane {
 	width: 100%;
 	height: 100%;
-	display: inline-flex;
 }
 
 #menu {
 	width: 200px;
 	min-height: 100%;
-	float: left;
+	/*float: left;*/
 	background: rgba(0, 0, 0, 0.6);
 }
 
 #nav {
-	height: 306px;
+	height: 357px;
 	width: 100%;
 }
 
 #social-icons {
 	height: 50px;
-	width: inherit;
+	width: 200px;
 	display: flex;
     text-align: center;
-    border-bottom: #ffffff solid 1px;
+    /*border-bottom: #ffffff solid 1px;*/
 }
-
+.icon {
+	margin: auto;
+}
 #social-icons .icon img {
-    height: 25px;
-    width: 25px;
-    margin-left: 12px;
-    margin-top: 12px;
+    height: 60%;
+    width: 60%;
+    /*margin-left: 12px;
+    margin-top: 12px;*/
     -webkit-filter: invert(100%);
 }
 
@@ -75,19 +75,8 @@ html, body {
 	width: 100%;
 	height: 100%;
 	float: left;
-	overflow: scroll;
+	overflow-y: scroll;
 }
-
-/*#content H1 {
-	font-size: 30pt;
-	font-family: 'PT Sans', Arial, sans-serif;
-	color: #fff;
-	text-align: center;
-	border-bottom: 1px solid #fff;
-	padding: 10px 0;
-	margin-left: 20px;
-
-}*/
 
 .post {
 	background: rgba(0, 0, 0, 0.6);
@@ -111,7 +100,7 @@ post p {
 	display: inline;
 }
 .post-title h1{
-	padding: 15px;
+	padding-top: 15px;
 	width: auto;
 
 }
@@ -124,12 +113,12 @@ post p {
     border-radius: 4px;
 }
 
-/* North Pane */
-#north-pane {
-	display: inline-flex;
+/* West Pane */
+#west-pane {
+	display: inline;
 	float: left;
-	height: 100px;
-	width: 100%;
+	height: 100%;
+	width: 200px;
 }
 
 #logo {
