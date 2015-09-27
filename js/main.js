@@ -32,6 +32,27 @@ app.controller('musicPostCtrl', function ($scope, $sce, $http) {
 	$scope.$on('viewLoaded', function(event){
 		new Juicer.Views.Feed({el: '.juicer-feed' }).render();
 	});
+})
+.controller('videoPostCtrl', function ($scope, $sce, $http) {
+	$scope.posts = {};
+
+	$http.get('data/videoPosts.json').
+	    success(function(data, status, headers, config) {
+	      $scope.posts.videoPosts = data;
+	    }).
+	    error(function(data, status, headers, config) {
+	      alert("Error: Could not retrieve data.")
+	    });
+})
+.controller('contactCtrl', function ($scope, $sce, $http, $document) {
+	$scope.$on('viewLoaded', function(event){
+		/*t = 'contactForm';
+	   var g = $document.createElement('t'),
+	       s = $document.getElementsByTagName(t)[0];
+	   g.src = "http://www.foxyform.com/js.php?id=701586&sec_hash=b97f1fa8968&width=350px";
+	   s.parentNode.insertBefore(g, s);
+		*/
+	});
 });
 
 // Routing
@@ -57,7 +78,8 @@ $sceDelegateProvider.resourceUrlWhitelist(
      'self',
      '*://www.youtube.com/**',
      '*://w.soundcloud.com/**',
-     '*.juicer.io/**'
+     '*.juicer.io/**',
+     '*://wwww.foxyform.com/**'
      /*,
      '*.facebook.com/**',
      '*scontent.cdninstagram.com/**'*/
