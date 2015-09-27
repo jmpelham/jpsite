@@ -1,36 +1,37 @@
+<!--
 <div ng-controller="contactCtrl">
-	<?php
-		$action=$_REQUEST['action'];
-		if ($action=="")    /* display the contact form */
-		    {
-		    ?>
-		    <form  action="" method="POST" enctype="multipart/form-data">
-		    <input type="hidden" name="action" value="submit">
-		    Your name:<br>
-		    <input name="name" type="text" value="" size="30"/><br>
-		    Your email:<br>
-		    <input name="email" type="text" value="" size="30"/><br>
-		    Your message:<br>
-		    <textarea name="message" rows="7" cols="30"></textarea><br>
-		    <input type="submit" value="Send email"/>
-		    </form>
-		    <?php
-		    } 
-		else                /* send the submitted data */
-		    {
-		    $name=$_REQUEST['name'];
-		    $email=$_REQUEST['email'];
-		    $message=$_REQUEST['message'];
-		    if (($name=="")||($email=="")||($message==""))
-		        {
-		        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
-		        }
-		    else{        
-		        $from="From: $name<$email>\r\nReturn-path: $email";
-		        $subject="Message sent using your contact form";
-		        mail("youremail@yoursite.com", $subject, $message, $from);
-		        echo "Email sent!";
-		        }
-		    }  
-		?>
+
+	<div class="post">
+	<p>Email me! I'd love to hear from you.</p> 
+
+	<p>Email: projectjump4031@gmail.com</p>
+	</div>
+</div>
+-->
+<div ng-controller="contactCtrl">
+	<div class="page-header">
+		<H1>Contact</H1>
+	</div>
+
+	<div id="sa_contactdiv" class="post">
+
+	<form name=sa_htmlform style="margin:0px" onsubmit="return sa_contactform()">
+		<table>
+			<tr>
+				<td>Name:<br><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td>E-mail Address: <span style="color:#D70000">*</span><br><input type="text" name="email" required="true" /></td>
+			</tr>
+			<tr>
+				<td>Subject: <span style="color:#D70000">*</span><br><input type="text" name="subject" required="true" /></td>
+			</tr>
+			<tr>
+				<td>Message: <span style="color:#D70000">*</span><br><textarea name="message" cols="42" rows="9" required="true"></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Send Message" style="font-weight:bold"></td>
+			</tr>
+		</table>
+	</form>
 </div>
