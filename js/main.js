@@ -27,6 +27,10 @@ app.controller('musicPostCtrl', function ($scope, $sce, $http) {
 	    error(function(data, status, headers, config) {
 	      alert("Error: Could not retrieve data.")
 	    });
+
+	$scope.$on('viewLoaded', function() {
+		$('#player').width('100%');
+	});
 })
 .controller('socialCtrl', function ($scope) {
 	$scope.$on('viewLoaded', function(event){
@@ -46,12 +50,34 @@ app.controller('musicPostCtrl', function ($scope, $sce, $http) {
 })
 .controller('contactCtrl', function ($scope, $sce, $http, $document) {
 	$scope.$on('viewLoaded', function(event){
-		/*t = 'contactForm';
-	   var g = $document.createElement('t'),
-	       s = $document.getElementsByTagName(t)[0];
-	   g.src = "http://www.foxyform.com/js.php?id=701586&sec_hash=b97f1fa8968&width=350px";
-	   s.parentNode.insertBefore(g, s);
-		*/
+		var sa_params='';
+		function sa_contactform(){
+		var sa_frm=document.sa_htmlform;
+		for(i=0; i<sa_frm.elements.length; i++){
+		var sa_el=sa_frm.elements[i];if(sa_frm.elements[i].name){sa_params+='&'+sa_frm.elements[i].name+'='+encodeURIComponent(sa_frm.elements[i].value);}
+		if(!sa_el.value && sa_el.getAttribute('required')=='true'){alert('Please complete all required fields');sa_el.focus();return false;}
+		}
+		var s = document.createElement('script');
+		s.setAttribute('type','text/javascript');
+		s.setAttribute('src','http://www.smartaddon.com/js/postform.js');
+		document.body.appendChild(s);
+		return false;
+		}
+		function sa_contactsent(){
+		if(typeof sa_sent_text=='undefined'){sa_sent_text='Thank you for contacting us. We will get back to you soon.';}
+		document.getElementById('sa_contactdiv').innerHTML=sa_sent_text+'<br><br>Contact Form provided by SmartAddon.com';
+		}
+
+		sa_params += '<input type=hidden name=emailid value="'+sa_email_id+'">';
+		sa_params += '<input type=hidden name=session value="4dc50dca6f441117e9fdc0ebee5e631a">';
+		sa_params += '<input type=hidden name=screensize value="'+screen.width+' x '+screen.height+'">';
+		sa_params += '<input type=hidden name=useragent value="'+sa_htmlent(navigator.userAgent)+'">';
+		sa_params += '<input type=hidden name=submittedfrom value="'+sa_htmlent(document.location.href)+'">';
+		var sa_iframe = document.createElement("iframe");document.body.appendChild(sa_iframe);
+		sa_iframe.setAttribute('style', 'width:1px;height:1px;display:none');
+		var sa_frmcode = '<html><body><form method=post action="http://www.smartaddon.com/js/postform.php" name=pgfrm>'+sa_params+'</form><'+'script language="javascript">document.pgfrm.submit()<'+'/script></body></html>';
+		sa_iframe.contentWindow.document.write(sa_frmcode);
+		sa_contactsent();
 	});
 });
 
@@ -59,7 +85,7 @@ app.controller('musicPostCtrl', function ($scope, $sce, $http) {
 app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 $routeProvider
 // Home / News
-.when("/", {templateUrl: "html/news.html"})
+.when("/", {templateUrl: "html/about.html"})
 // Music
 .when("/music", {templateUrl: "html/music.html"})
 // Videos
@@ -79,10 +105,11 @@ $sceDelegateProvider.resourceUrlWhitelist(
      '*://www.youtube.com/**',
      '*://w.soundcloud.com/**',
      '*.juicer.io/**',
-     '*://wwww.foxyform.com/**'
-     /*,
-     '*.facebook.com/**',
-     '*scontent.cdninstagram.com/**'*/
+     '*://wwww.foxyform.com/**',
+     '*.smartaddon.com/**',
+     '*.embedly.com/**',
+     '*.tumblr.com/**',
+     '*://bandcamp.com/**'
 	]
 );
 

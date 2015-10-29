@@ -90,8 +90,9 @@ html, body {
     color: #fff;
 }
 
-post p {
-
+.post p {
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .post-title{
