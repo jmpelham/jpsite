@@ -48,7 +48,7 @@ $routeProvider
 // Blog
 .when("/blog", {templateUrl: "html/blog.html"})
 // Contact
-.when("/contact", {templateUrl: "html/contact.html"})
+.when("/contact", {templateUrl: "php/contact.php"})
 
 $sceDelegateProvider.resourceUrlWhitelist(
 	[
